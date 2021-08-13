@@ -1,0 +1,10 @@
+.nav-btn {
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 991px) {
+    .nav-btn {
+        margin-bottom: 10px;
+        display: block;
+    }
+}
