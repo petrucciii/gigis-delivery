@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patners.component.scss']
 })
 export class PatnersComponent implements OnInit {
-  patners: string[] = [
-    '../../assets/images/patners/mc.ico',
-    '../../assets/images/patners/bk.ico',
-    '../../assets/images/patners/kfc.ico'
+  patners = {
+    mcLogo: '../../assets/images/patners/mc.ico',
+    bkLogo: '../../assets/images/patners/bk.ico',
+    kfcLogo: '../../assets/images/patners/kfc.ico',
+  }
+
+  patnersLogos: string[] = [
+    this.patners.mcLogo,
+    this.patners.bkLogo,
+    this.patners.kfcLogo,
   ]
 
   constructor() { }
