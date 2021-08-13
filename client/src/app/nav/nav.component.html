@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark p-3" style="background-color: #3df755;">
+<nav class="navbar navbar-expand-lg navbar-dark p-3 fixed-top w-100" style="background-color: #3df755;">
     <div class="container-fluid">
         <img 
             src="../../favicon.ico" 
@@ -7,7 +7,7 @@
             height="60" 
             class="d-inline-block align-text-top"
         >
-        <a class="navbar-brand title" href="#">
+        <a class="navbar-brand title" href="javascript:void(0);" [routerLink]="['/']">
             GiGi's Delivery
         </a>
         <button 
@@ -23,18 +23,18 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ordina</a>
+                    <a class="nav-link" href="javascript:void(0);" [routerLink]="['/registrati']">Ordina</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Patners</a>
+                    <a class="nav-link" href="#patners">Patners</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Diventa un Rider</a>
+                    <a class="nav-link" href="javascript:void(0);" [routerLink]="['/rider']">Diventa un Rider</a>
                 </li>
             </ul>
             <span class="navbar-text">
-                <button class="btn btn-outline-danger nav-btn">Registrati</button>
-                <button class="btn btn-outline-primary nav-btn">Accedi</button>
+                <a [routerLink]="['/registrati']" href="javascript:void(0);" class="btn btn-outline-danger nav-btn">Registrati</a>
+                <a [routerLink]="['/accedi']" href="javascript:void(0);"  class="btn btn-outline-primary nav-btn">Accedi</a>
             </span>
         </div>
     </div>
