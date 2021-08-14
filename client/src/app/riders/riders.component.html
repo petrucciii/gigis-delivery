@@ -24,7 +24,13 @@
                 <label for="exampleFormControlInput1" class="form-label required">Dove vivi? </label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" required>
             </div>
-            <input type="submit" class="btn btn-outline-secondary send-btn" style="width: 60px;" value="Invia">
+            <div class="mb-3">
+                <label for="formFile" class="form-label required"> Inserisci il tuo Curriculum </label><br>
+                <label class="btn btn-primary">
+                    <i class="fa fa-file"></i> Aggiungi Curriculum<input type="file" class="form-control" style="display: none;" name="image" required>
+                </label>
+              </div>    
+            <input type="submit" class="btn btn-success" value="Invia">
         </form>
     </div>
 </section>
