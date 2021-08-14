@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-riders',
@@ -7,7 +8,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RidersComponent implements OnInit {
 
-  constructor() { }
+  mail: FormGroup;
+  mailError: boolean = false;
+
+  constructor(public fb: FormBuilder) { 
+    this.mail = fb.group({
+      "name": ['', Validators.required],
+      "email": ['', Validators.required],
+      "reason": ['', Validators.required],
+      "experience": ['', Validators.required],
+      "city": ['', Validators.required],
+      "curriculum": ['', Validators.required]
+    });
+  }
+
+  sendMail(): void {
+    if (this.mail.valid == false) {
+      this.mailError = true;
+    } else {
+      this.mailError = false;
+      const formData = () => {
+        let name = this.mail.controls['name'].value;
+        let email = this.mail.controls['email'].value;
+        let reason = this.mail.controls['reason'].value;
+        let experience = this.mail.controls['experience'].value;
+        let city = this.mail.controls['city'].value;
+    
+        const data = [name, email, reason, experience, city];
+        return data;
+      }       
+    }
+  }
 
   ngOnInit(): void {
   }
