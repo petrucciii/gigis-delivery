@@ -7,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatnersComponent implements OnInit {
   patners = {
-    mcLogo: '../../assets/images/patners/mc.ico',
-    bkLogo: '../../assets/images/patners/bk.ico',
-    kfcLogo: '../../assets/images/patners/kfc.ico',
+    lcLogo: '../../assets/images/patners/lc.png',
+    osLogo: '../../assets/images/patners/os.png',
+    ppLogo: '../../assets/images/patners/pp.png',
+    rdmLogo: '../../assets/images/patners/rdm.png'
   }
 
   patnersLogos: string[] = [
-    this.patners.mcLogo,
-    this.patners.bkLogo,
-    this.patners.kfcLogo,
+    this.patners.lcLogo,
+    this.patners.osLogo,
+    this.patners.ppLogo,
+    this.patners.rdmLogo
   ]
 
   constructor() { }
