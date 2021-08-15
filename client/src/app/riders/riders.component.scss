@@ -3,3 +3,7 @@
     color: red;
 }
 
+.mail-error::before {
+    content: "*";
+    color: red;
+}

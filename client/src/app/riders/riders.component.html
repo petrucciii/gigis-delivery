@@ -4,30 +4,31 @@
         <h3>Vuoi Diventare un Rider?</h3>
         <p class="lead container">Pensi di essere qualificato per fare il rider? Si? Allora compila questo form, ti risponderemo in prima possibile.</p>
         <form method="post" class="container" (ngSubmit)="sendMail()" [formGroup]="mail">
+            <label for="exampleFormControlInput1" class="form-label mail-error" *ngIf="mailError">Devi Compilare Tutti i Campi!</label>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label required">Nome Completo </label><label for="exampleFormControlInput1" class="form-label" *ngIf="mailError"> Passaggio Obbligatorio!</label>
+                <label for="exampleFormControlInput1" class="form-label required">Nome Completo </label>
                 <input name="name" type="text" class="form-control" id="exampleFormControlInput1" formControlName="name" required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label required">Indirizzo E-mail </label><label for="exampleFormControlInput1" class="form-label" *ngIf="mailError"> Passaggio Obbligatorio!</label>
+                <label for="exampleFormControlInput1" class="form-label required">Indirizzo E-mail </label>
                 <input name="email" type="email" class="form-control" id="exampleFormControlInput1" formControlName="email" required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label required">Perché vuoi fare il rider? </label><label for="exampleFormControlInput1" class="form-label" *ngIf="mailError"> Passaggio Obbligatorio!</label>
+                <label for="exampleFormControlInput1" class="form-label required">Perché vuoi fare il rider? </label>
                 <input name="reason" type="text" class="form-control" id="exampleFormControlInput1" formControlName="reason" required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label required">Hai giá svolto questo lavoro in passato? </label><label for="exampleFormControlInput1" class="form-label" *ngIf="mailError"> Passaggio Obbligatorio!</label>
+                <label for="exampleFormControlInput1" class="form-label required">Hai giá svolto questo lavoro in passato? </label>
                 <input name="experience" type="text" class="form-control" id="exampleFormControlInput1" formControlName="experience" required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label required">Dove vivi? </label><label for="exampleFormControlInput1" class="form-label" *ngIf="mailError"> Passaggio Obbligatorio!</label>
+                <label for="exampleFormControlInput1" class="form-label required">Dove vivi? </label>
                 <input name="city" type="text" class="form-control" id="exampleFormControlInput1" formControlName="city" required>
             </div>
             <div class="mb-3">
-                <label for="formFile" class="form-label required"> Inserisci il tuo Curriculum </label><label for="exampleFormControlInput1" class="form-label" *ngIf="mailError"> Passaggio Obbligatorio!</label><label *ngIf="correctUpload" for="exampleFormControlInput1" class="form-label"> File Caricato </label><br>
+                <label for="formFile" class="form-label required"> Inserisci il tuo Curriculum </label><label *ngIf="correctUpload" for="exampleFormControlInput1" class="form-label"> File Caricato </label><br>
                 <label class="btn btn-primary">
-                    <i class="fa fa-file"></i> Aggiungi Curriculum<input type="file" (change)="fileUpload()" class="form-control" style="display: none;" name="curriculum" formControlName="curriculum" required>
+                    <i class="fa fa-file"></i> Aggiungi Curriculum<input type="file" (change)="fileUpload($event)" class="form-control" style="display: none;" name="curriculum" formControlName="curriculum" required>
                 </label>
             </div>
             <input type="submit" class="btn btn-success" value="Invia">

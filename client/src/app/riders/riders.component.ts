@@ -12,6 +12,7 @@ export class RidersComponent implements OnInit {
   mail: FormGroup;
   mailError: boolean = false;
 
+  uploadForm: FormGroup | undefined;
   correctUpload: boolean = false;
 
   constructor(public fb: FormBuilder, public http: HttpClient) { 
@@ -25,9 +26,13 @@ export class RidersComponent implements OnInit {
     });
   }
 
-  fileUpload(): void {
-    this.correctUpload = true;
-    
+  ngOnInit(): void {
+    this.uploadForm = this.fb.group({
+      profile: ['']
+    });
+  }
+
+  fileUpload(event: any): void {
   }
 
   sendMail(): void {
@@ -35,6 +40,7 @@ export class RidersComponent implements OnInit {
       this.mailError = true;
     } else {
       this.mailError = false;
+
       const formData = () => {
         let name = this.mail.controls['name'].value;
         let email = this.mail.controls['email'].value;
@@ -44,12 +50,11 @@ export class RidersComponent implements OnInit {
     
         const data = [name, email, reason, experience, city];
         return data;
-      }       
+      }
+
+      const upload = () => {
+      }
     }
-  }
-
-
-  ngOnInit(): void {
   }
 
 }
