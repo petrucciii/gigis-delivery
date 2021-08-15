@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "create-component": "ng g c",
+    "create-directive": "ng g d",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

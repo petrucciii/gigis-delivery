@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'rider',
     component: RidersComponent
-  }
+  },
 ];
 
 @NgModule({

@@ -1,3 +1,4 @@
+import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -11,7 +12,9 @@ export class RidersComponent implements OnInit {
   mail: FormGroup;
   mailError: boolean = false;
 
-  constructor(public fb: FormBuilder) { 
+  correctUpload: boolean = false;
+
+  constructor(public fb: FormBuilder, public http: HttpClient) { 
     this.mail = fb.group({
       "name": ['', Validators.required],
       "email": ['', Validators.required],
@@ -20,6 +23,11 @@ export class RidersComponent implements OnInit {
       "city": ['', Validators.required],
       "curriculum": ['', Validators.required]
     });
+  }
+
+  fileUpload(): void {
+    this.correctUpload = true;
+    
   }
 
   sendMail(): void {
@@ -39,6 +47,7 @@ export class RidersComponent implements OnInit {
       }       
     }
   }
+
 
   ngOnInit(): void {
   }
