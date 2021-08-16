@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { RidersComponent } from './riders/riders.component';
 import { OrderComponent } from './order/order.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { OrderComponent } from './order/order.component';
     HomeComponent,
     RidersComponent,
     OrderComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,
