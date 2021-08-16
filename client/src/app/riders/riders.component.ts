@@ -1,6 +1,8 @@
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-riders',
@@ -12,8 +14,10 @@ export class RidersComponent implements OnInit {
   mail: FormGroup;
   mailError: boolean = false;
 
-  uploadForm: FormGroup | undefined;
   correctUpload: boolean = false;
+  selectedFiles?: FileList;
+  currentFile?: File;
+  fileInfos?: Observable<any>;
 
   constructor(public fb: FormBuilder, public http: HttpClient) { 
     this.mail = fb.group({
@@ -27,12 +31,10 @@ export class RidersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.uploadForm = this.fb.group({
-      profile: ['']
-    });
   }
 
   fileUpload(event: any): void {
+    this.selectedFiles = event.target.files;   
   }
 
   sendMail(): void {
@@ -53,8 +55,12 @@ export class RidersComponent implements OnInit {
       }
 
       const upload = () => {
+        if (this.selectedFiles) {
+          const file: File | null = this.selectedFiles.item(0);
+          const fD = new FormData;
+        }
       }
+      upload();
     }
   }
-
 }

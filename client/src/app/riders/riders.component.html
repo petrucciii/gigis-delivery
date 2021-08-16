@@ -31,7 +31,7 @@
                     <i class="fa fa-file"></i> Aggiungi Curriculum<input type="file" (change)="fileUpload($event)" class="form-control" style="display: none;" name="curriculum" formControlName="curriculum" required>
                 </label>
             </div>
-            <input type="submit" class="btn btn-success" value="Invia">
+            <input type="submit" [disabled]="!selectedFiles" class="btn btn-success" value="Invia">
         </form>
     </div>
 </section>
