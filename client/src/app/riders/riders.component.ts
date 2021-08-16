@@ -11,14 +11,14 @@ import { Observable } from 'rxjs';
 })
 export class RidersComponent implements OnInit {
 
+  URL: string = 'http://petrucciii.altervista.org'
+
   mail: FormGroup;
   mailError: boolean = false;
 
   correctUpload: boolean = false;
-  selectedFiles?: FileList;
-  currentFile?: File;
-  fileInfos?: Observable<any>;
-
+  selectedFiles: any;
+  
   constructor(public fb: FormBuilder, public http: HttpClient) { 
     this.mail = fb.group({
       "name": ['', Validators.required],
@@ -34,7 +34,10 @@ export class RidersComponent implements OnInit {
   }
 
   fileUpload(event: any): void {
-    this.selectedFiles = event.target.files;   
+    this.selectedFiles = event.target.files;  
+    this.correctUpload = true; 
+    console.log(this.selectedFiles);
+    
   }
 
   sendMail(): void {
@@ -56,9 +59,19 @@ export class RidersComponent implements OnInit {
 
       const upload = () => {
         if (this.selectedFiles) {
-          const file: File | null = this.selectedFiles.item(0);
           const fD = new FormData;
-        }
+          fD.append('file', this.selectedFiles);
+          fD.append('name', formData()[0]);
+          fD.append('email', formData()[1]);
+          fD.append('reason', formData()[2]);
+          fD.append('experience', formData()[3]);
+          fD.append('city', formData()[4]);
+          fD.append('request', 'UPLOAD');
+          let reqServer = this.http.post(`${this.URL}/upload.php`, formData, {
+            reportProgress: true,
+            observe: 'events'
+          });
+        } 
       }
       upload();
     }
