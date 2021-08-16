@@ -12,6 +12,7 @@ import { PatnersComponent } from './patners/patners.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { RidersComponent } from './riders/riders.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RidersComponent } from './riders/riders.component';
     FooterComponent,
     HomeComponent,
     RidersComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
