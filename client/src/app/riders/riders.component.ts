@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class RidersComponent implements OnInit {
 
-  URL: string = 'http://petrucciii.altervista.org'
+  URL: string = 'http://example.com';
 
   mail: FormGroup;
   mailError: boolean = false;
