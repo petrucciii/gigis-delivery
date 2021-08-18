@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { RidersComponent } from './riders/riders.component';
 import { OrderComponent } from './order/order.component';
 import { Error404Component } from './error404/error404.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { Error404Component } from './error404/error404.component';
     RidersComponent,
     OrderComponent,
     Error404Component,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
